@@ -29,6 +29,7 @@ jobs:
           token: ${{ secrets.BLOG_REPO_TOKEN }}
           path: blog
           fetch-depth: 0
+          persist-credentials: false  # 不自动持久化凭证，push 时手动设置
 
       # === 步骤 1：生成清单（从博客仓库读取旧清单做对比）===
       - name: 生成博客同步清单
@@ -50,6 +51,8 @@ jobs:
             echo "ℹ️ 博客仓库无变化"
           else
             git commit -m "🔄 同步文章更新 $(date -u +%Y-%m-%d)"
+            # 显式设置带 token 的 remote URL，确保 push 认证正确
+            git remote set-url origin "https://x-access-token:${{ secrets.BLOG_REPO_TOKEN }}@github.com/${{ secrets.BLOG_REPO }}.git"
             git push
             echo "✅ 已推送到博客仓库"
           fi
