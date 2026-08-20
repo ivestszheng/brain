@@ -10,10 +10,10 @@ on:
         default: 'sync'
         options:
           - 'sync'       # 生成清单 + 同步到博客
-          - 'generate'   # 仅预览变更和脱敏检查（不同步）
+          - 'preview'    # 仅预览变更和脱敏检查（不同步，不影响仓库）
 
 permissions:
-  contents: write  # 允许提交清单回本仓库
+  contents: write  # 允许推送到博客仓库
 
 jobs:
   sync:
