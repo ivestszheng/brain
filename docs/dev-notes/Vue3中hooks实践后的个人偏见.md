@@ -5,7 +5,7 @@ description: 着重介绍 hooks 在一个难度适中的示例中是如何使用
 tags:
   - 技术
   - Vue.js
-public: true
+publish: true
 ---
 
 ## 前言
