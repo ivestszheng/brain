@@ -2,6 +2,10 @@
 .obsidian/plugins/*
 !.obsidian/plugins/community-plugins.json
 
+# Obsidian 工作区状态（机器特定，频繁变动，无需跨设备同步）
+.obsidian/workspace.json
+.obsidian/graph.json
+
 # 系统文件
 .DS_Store
 Thumbs.db
