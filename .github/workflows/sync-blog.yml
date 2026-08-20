@@ -1,0 +1,55 @@
+name: 同步文章到博客
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: '选择操作'
+        required: true
+        type: choice
+        default: 'sync'
+        options:
+          - 'sync'       # 生成清单 + 同步到博客
+          - 'generate'   # 仅预览变更和脱敏检查（不同步）
+
+permissions:
+  contents: write  # 允许提交清单回本仓库
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出第二大脑仓库
+        uses: actions/checkout@v4
+
+      - name: 检出博客仓库
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.BLOG_REPO }}
+          token: ${{ secrets.BLOG_REPO_TOKEN }}
+          path: blog
+          fetch-depth: 0
+
+      # === 步骤 1：生成清单（从博客仓库读取旧清单做对比）===
+      - name: 生成博客同步清单
+        run: node scripts/generate-blog-manifest.mjs blog/.blog-sync-manifest.json
+
+      # === 步骤 2：同步到博客（仅 sync 操作执行）===
+      - name: 同步文章到博客
+        if: inputs.action == 'sync'
+        run: node scripts/sync-to-blog.mjs blog docs
+
+      - name: 提交并推送到博客仓库
+        if: inputs.action == 'sync'
+        run: |
+          cd blog
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "ℹ️ 博客仓库无变化"
+          else
+            git commit -m "🔄 同步文章更新 $(date -u +%Y-%m-%d)"
+            git push
+            echo "✅ 已推送到博客仓库"
+          fi

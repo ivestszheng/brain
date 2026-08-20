@@ -11,10 +11,14 @@
             "id": "7ec9de3e2e302856",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "docs/career/Gap4个月的心路历程——2025年中总结.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Gap4个月的心路历程——2025年中总结"
             }
           }
         ]
@@ -196,8 +200,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7ec9de3e2e302856",
+  "active": "95024617eb57ebb2",
   "lastOpenFiles": [
+    "test-blog/docs/post/Vue3中hooks实践后的个人偏见.md",
+    "test-blog/docs/post",
+    "test-blog/docs",
+    "test-blog",
+    "test-blog/docs/dev-notes/长列表无限下拉的实现（上）.md",
+    "test-blog/docs/dev-notes/Vue3中hooks实践后的个人偏见.md",
+    "test-blog/docs/dev-notes",
+    "test-blog/public",
+    "blog-sync-manifest.json",
+    "scripts/sync-to-blog.mjs",
+    "scripts/generate-blog-manifest.mjs",
+    "scripts",
+    "docs/career/二本应届生杭州小厂前端面试总结.md",
+    "docs/career/不断学习2022年中总结.md",
+    "docs/career/2023的一些思考.md",
+    "docs/dev-notes/长列表无限下拉的实现（上）.md",
+    "docs/dev-notes/TailwindCSS很好，但不适合我.md",
+    "docs/dev-notes/vue-cli5关于yarn的一个小坑.md",
+    "docs/dev-notes/Vue3中hooks实践后的个人偏见.md",
+    "docs/dev-notes/钉钉H5微应用开发.md",
     "README.md",
     "dev-notes/Obsidian第二大脑完整方案.md",
     "未命名.base",
@@ -210,15 +234,6 @@
     "diary/2026-04-30.md",
     "diary/2026-04-27.md",
     "diary/2026-04-25.md",
-    "finance",
-    "projects/Untitled.md",
-    "未命名 1.base",
-    "templates",
-    "career copy",
-    "career",
-    "jottings",
-    "informal-essay",
-    "projects",
-    "dev-notes"
+    "projects/Untitled.md"
   ]
 }
