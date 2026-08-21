@@ -1,6 +1,7 @@
 ---
 date: 2026-08-03 15:52:59
 project: XZNY小程序
+private: true
 ---
 
 # XZNY小程序开发实战复盘
