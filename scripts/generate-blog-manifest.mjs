@@ -179,6 +179,7 @@ function main() {
   const allImages = new Set();
   let skippedNoFrontmatter = 0;
   let skippedNoPublish = 0;
+  let skippedPrivate = 0;
 
   for (const filePath of files) {
     const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
@@ -192,8 +193,15 @@ function main() {
     }
 
     // 未标记 publish: true
-    if (fm.publish !== true) {
+    if (fm.publish !== true && fm.publish !== 'true') {
       skippedNoPublish++;
+      continue;
+    }
+
+    // 标记了 private: true 的文章强制不同步（即使有 publish: true）
+    if (fm.private === true || fm.private === 'true') {
+      skippedPrivate++;
+      console.log(`  ✗ 私密文章，强制跳过：${relativePath}`);
       continue;
     }
 
@@ -238,7 +246,8 @@ function main() {
   console.log(`\n  筛选结果：`);
   console.log(`    标记发布：  ${articles.length} 篇`);
   console.log(`    无 frontmatter 跳过：${skippedNoFrontmatter} 篇`);
-  console.log(`    未标记 publish 跳过：${skippedNoPublish} 篇\n`);
+  console.log(`    未标记 publish 跳过：${skippedNoPublish} 篇`);
+  console.log(`    私密文章跳过：${skippedPrivate} 篇\n`);
 
   const manifestPath = path.join(root, 'blog-sync-manifest.json');
 
