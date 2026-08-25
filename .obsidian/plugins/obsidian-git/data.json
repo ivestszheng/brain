@@ -1,0 +1,22 @@
+{
+  "commitMessage": "vault backup: {{date}}",
+  "autoSaveInterval": 10,
+  "autoPullInterval": 0,
+  "autoPullOnBoot": true,
+  "disablePush": false,
+  "pullBeforePush": true,
+  "disablePopups": false,
+  "listChangedFilesInMessageBody": false,
+  "showStatusBar": true,
+  "resolveSubmodules": false,
+  "gitPath": "",
+  "customMessageOnAutoBackup": false,
+  "showedMobileNotice": true,
+  "refreshSourceControlControlButton": false,
+  "basePath": "",
+  "changelogText": "",
+  "refuseAutoUpdate": false,
+  "autoBackupMessage": "vault backup: {{date}}",
+  "autoBackupAfterFileChange": false,
+  "showedMobileDeprecationNotice": false
+}

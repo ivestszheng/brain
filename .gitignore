@@ -1,6 +1,9 @@
-# Obsidian 插件（只保留插件列表，不保留插件本体）
+# Obsidian 插件（只保留插件列表和配置，不保留插件本体）
 .obsidian/plugins/*
 !.obsidian/plugins/community-plugins.json
+!.obsidian/plugins/*/
+.obsidian/plugins/*/*
+!.obsidian/plugins/*/data.json
 
 # Obsidian 工作区状态（机器特定，频繁变动，无需跨设备同步）
 .obsidian/workspace.json

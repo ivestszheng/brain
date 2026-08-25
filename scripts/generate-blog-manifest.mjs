@@ -177,6 +177,7 @@ function main() {
   const articles = [];
   const allWarnings = [];
   const allImages = new Set();
+  const validationWarnings = [];
   let skippedNoFrontmatter = 0;
   let skippedNoPublish = 0;
   let skippedPrivate = 0;
@@ -207,6 +208,17 @@ function main() {
 
     console.log(`  ✓ 标记发布：${relativePath}`);
     console.log(`    title: ${fm.title || '(未设置)'}`);
+
+    // frontmatter 字段校验
+    const missingFields = [];
+    if (!fm.title) missingFields.push('title');
+    if (!fm.date) missingFields.push('date');
+    if (!fm.description) missingFields.push('description');
+    if (!fm.tags || (Array.isArray(fm.tags) && fm.tags.length === 0)) missingFields.push('tags');
+    if (missingFields.length > 0) {
+      console.log(`    ⚠ 缺少必填字段：${missingFields.join(', ')}`);
+      validationWarnings.push({ file: relativePath, missingFields });
+    }
 
     // 脱敏检查
     console.log(`    脱敏检查中...`);
@@ -336,6 +348,15 @@ function main() {
     console.log(`🖼️  本地图片引用：${allImages.size} 个`);
     allImages.forEach((img) => console.log(`  • ${img}`));
     console.log();
+  }
+
+  if (validationWarnings.length > 0) {
+    console.log(`📋 字段校验警告：${validationWarnings.length} 篇缺少必填字段`);
+    for (const v of validationWarnings) {
+      console.log(`  • [${v.missingFields.join(', ')}] ${v.file}`);
+    }
+    console.log('\n⚠️  请补全 title、date、description、tags 字段后再同步到博客。');
+    console.log('   缺少这些字段会导致博客展示异常（无标题、无日期、无摘要、无标签）。');
   }
 
   if (allWarnings.length > 0) {

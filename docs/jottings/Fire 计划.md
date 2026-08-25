@@ -1,3 +1,9 @@
+---
+title: Fire 计划
+date: 2026-08-25
+private: true
+---
+
 # Fire Plan
 
 ## 目标
