@@ -7,7 +7,8 @@
 | 目录 | 用途 | 可同步到博客 |
 |------|------|:---:|
 | `docs/career/` | 职业总结 | ✅ |
-| `docs/dev-notes/` | 开发笔记 | ✅ |
+| `docs/dev-essay/` | 开发总结（正式） | ✅ |
+| `docs/dev-notes/` | 开发笔记（简单记录） | ❌ |
 | `docs/finance/` | 财务管理 | ✅ |
 | `docs/informal-essay/` | 杂文 | ✅ |
 | `docs/diary/` | 日记 | ❌ |
@@ -33,10 +34,10 @@ git push -u origin main
 - **本地单库管理**：所有内容集中在 brain 仓库
 - **Obsidian Git 插件**自动 Commit & Push（建议间隔 10 分钟），启动时自动 Pull
 - **博客同步**：在文章 frontmatter 中加 `publish: true`，手动触发 GitHub Actions 将文章增量同步到博客仓库 `ivestszheng.github.io` 的 `docs/post/` 目录
-- **白名单目录**：只有 `career/`、`dev-notes/`、`finance/`、`informal-essay/` 下的文章可同步
+- **白名单目录**：只有 `career/`、`dev-essay/`、`finance/`、`informal-essay/` 下的文章可同步
 - **增量同步**：只动有变化的文章，不误删博客已有内容
 - **变更追踪**：内容哈希对比，输出新增/修改/移除/未变化
-- 详细方案见 [Obsidian第二大脑完整方案.md](docs/dev-notes/Obsidian第二大脑完整方案.md)
+- 详细方案见 [Obsidian第二大脑完整方案.md](docs/dev-essay/Obsidian第二大脑完整方案.md)
 
 ## 内容安全与脱敏
 

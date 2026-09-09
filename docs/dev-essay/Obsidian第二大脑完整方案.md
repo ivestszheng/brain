@@ -30,7 +30,8 @@ brain/
 ├── .github/workflows/   # CI 工作流
 ├── docs/
 │   ├── career/          # 职业总结（可同步）
-│   ├── dev-notes/       # 开发笔记（可同步）
+│   ├── dev-essay/       # 开发总结（可同步）
+│   ├── dev-notes/       # 开发笔记（不同步）
 │   ├── diary/           # 日记（不同步）
 │   ├── finance/         # 财务管理（可同步）
 │   ├── health/          # 健康记录（不同步）
@@ -114,7 +115,7 @@ publish: true
 | 目录 | 用途 |
 |------|------|
 | `docs/career/` | 职业总结、面试复盘 |
-| `docs/dev-notes/` | 开发笔记、技术文章 |
+| `docs/dev-essay/` | 开发总结、技术文章（正式） |
 | `docs/finance/` | 财务管理 |
 | `docs/informal-essay/` | 杂文 |
 

@@ -20,7 +20,7 @@ const root = path.resolve(__dirname, '..');
 // --- 配置 ---
 
 /** 白名单目录（只有这些目录下的文章允许同步到博客） */
-const WHITELIST_DIRS = ['career', 'dev-notes', 'finance', 'informal-essay'];
+const WHITELIST_DIRS = ['career', 'dev-essay', 'finance', 'informal-essay'];
 
 /** 脱敏检查规则 */
 const SENSITIVITY_PATTERNS = [
