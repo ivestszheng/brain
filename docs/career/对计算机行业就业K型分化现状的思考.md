@@ -7,8 +7,10 @@ tags:
 publish: true
 ---
 
-## 为什么说计算机行业就业是K型分化？
+## 计算机行业就业是K型分化
 
  
 ## AI冲击哪些岗位
-## 23
+## 参考
+
+- [2026翰德人才趋势报告](https://hulianhutongshequ.cn/upload/tank/report/2026/202604/3/982aeb3d4af34f43a554427e21323d29.pdf)
